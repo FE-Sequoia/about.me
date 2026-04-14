@@ -1,0 +1,29 @@
+---
+interface Skill {
+  category: string;
+  items: string[];
+}
+
+interface Props {
+  skills: Skill[];
+}
+
+const { skills } = Astro.props;
+---
+
+<section class="py-16 border-t border-gray-200 dark:border-gray-800">
+  <h2 class="section-title">技能标签</h2>
+  
+  <div class="flex flex-wrap gap-3">
+    {skills.map((skill) => (
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">
+          {skill.category}:
+        </span>
+        {skill.items.map((item) => (
+          <span class="tag">{item}</span>
+        ))}
+      </div>
+    ))}
+  </div>
+</section>
