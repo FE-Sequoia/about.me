@@ -3,5 +3,5 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://yourusername.github.io',
+  site: 'https://fe-sequoia.github.io/about.me',
 });
