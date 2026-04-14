@@ -2,28 +2,28 @@
 const { experience } = Astro.props;
 ---
 
-<section class="py-16 border-t border-gray-200 dark:border-gray-800">
+<section class="py-16 section-divider">
   <h2 class="section-title">工作经历</h2>
   
   <div class="space-y-8">
     {experience.map((item, index) => (
-      <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
-        <div class="absolute left-0 w-3 h-3 -translate-x-[7px] rounded-full bg-primary-500"></div>
+      <div class="relative pl-8 border-l-2 border-default">
+        <div class="absolute left-0 w-3 h-3 -translate-x-[7px] rounded-full accent-primary"></div>
         
         <div class="mb-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+          <h3 class="text-lg font-semibold text-primary">
             {item.position}
           </h3>
-          <span class="text-sm text-gray-500 dark:text-gray-400 font-mono">
+          <span class="text-sm text-secondary font-mono">
             {item.period}
           </span>
         </div>
         
-        <p class="text-primary-600 dark:text-primary-400 font-medium mb-2">
+        <p class="accent-primary font-medium mb-2">
           {item.company}
         </p>
         
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+        <p class="text-secondary leading-relaxed">
           {item.description}
         </p>
       </div>

@@ -1,14 +1,9 @@
 ---
-interface Props {
-  title: string;
-  description?: string;
-}
-
-const { title, description = '一个简洁美观的个人作品集' } = Astro.props;
+const { title, description = '一个简洁美观的个人作品集', theme = 'minimal' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme={theme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -20,11 +15,12 @@ const { title, description = '一个简洁美观的个人作品集' } = Astro.pr
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen">
+  <body class="min-h-screen" style={`background-color: var(--bg-primary); color: var(--text-primary);`}>
     <slot />
   </body>
 </html>
 
 <style is:global>
+  @import '../styles/themes.css';
   @import '../styles/global.css';
 </style>

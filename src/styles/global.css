@@ -8,8 +8,9 @@
   }
   
   body {
-    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100;
-    @apply transition-colors duration-300;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -19,23 +20,97 @@
   }
   
   .section-title {
-    @apply text-2xl font-bold mb-8 text-gray-900 dark:text-white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+  }
+  
+  .section-divider {
+    border-top: 1px solid var(--border-color);
   }
   
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg;
-    @apply hover:bg-primary-700 transition-colors duration-200;
-    @apply dark:bg-primary-500 dark:hover:bg-primary-600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-600);
+    color: white;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-700);
   }
   
   .tag {
-    @apply inline-block px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full;
-    @apply dark:bg-gray-800 dark:text-gray-300;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border-radius: 9999px;
+  }
+  
+  .card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: var(--primary-400);
+    transform: translateY(-2px);
+  }
+  
+  .link-icon {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+  }
+  
+  .link-icon:hover {
+    color: var(--primary-500);
+    transform: scale(1.1);
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400;
+    background: linear-gradient(to right, var(--primary-600), var(--primary-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .bg-primary {
+    background-color: var(--bg-primary);
+  }
+  
+  .bg-secondary {
+    background-color: var(--bg-secondary);
+  }
+  
+  .border-default {
+    border-color: var(--border-color);
+  }
+  
+  .accent-primary {
+    color: var(--primary-500);
+  }
+  
+  .bg-accent-light {
+    background-color: color-mix(in srgb, var(--primary-500) 15%, transparent);
   }
 }

@@ -4,33 +4,33 @@ const featuredProjects = projects.filter(p => p.featured);
 const otherProjects = projects.filter(p => !p.featured);
 ---
 
-<section class="py-16 border-t border-gray-200 dark:border-gray-800">
+<section class="py-16 section-divider">
   <h2 class="section-title">精选项目</h2>
   
   <div class="grid gap-6 md:grid-cols-2">
     {featuredProjects.map((project) => (
-      <article class="group relative p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-300">
+      <article class="card group">
         <div class="flex items-start justify-between mb-4">
-          <div class="p-3 rounded-xl bg-primary-100 dark:bg-primary-900/30">
-            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="p-3 rounded-xl bg-accent-light">
+            <svg class="w-6 h-6 accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
             </svg>
           </div>
           
           {project.url && (
-            <a href={project.url} target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
-              <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href={project.url} target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg hover:bg-secondary transition-colors link-icon">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
           )}
         </div>
         
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+        <h3 class="text-xl font-semibold text-primary mb-2 group-hover:accent-primary transition-colors">
           {project.name}
         </h3>
         
-        <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+        <p class="text-secondary mb-4 leading-relaxed">
           {project.description}
         </p>
         
@@ -46,18 +46,18 @@ const otherProjects = projects.filter(p => !p.featured);
   {otherProjects.length > 0 && (
     <div class="mt-8 grid gap-4">
       {otherProjects.map((project) => (
-        <article class="flex items-center gap-4 p-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
-          <div class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
-            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <article class="flex items-center gap-4 p-4 rounded-xl border border-default hover:bg-secondary transition-colors">
+          <div class="p-2 rounded-lg bg-secondary">
+            <svg class="w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
             </svg>
           </div>
           
           <div class="flex-1 min-w-0">
-            <h3 class="font-medium text-gray-900 dark:text-white truncate">
+            <h3 class="font-medium text-primary truncate">
               {project.name}
             </h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 truncate">
+            <p class="text-sm text-secondary truncate">
               {project.description}
             </p>
           </div>
@@ -69,8 +69,8 @@ const otherProjects = projects.filter(p => !p.featured);
           </div>
           
           {project.url && (
-            <a href={project.url} target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href={project.url} target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg hover:bg-secondary transition-colors link-icon">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>

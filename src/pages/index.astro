@@ -10,7 +10,11 @@ import config from '../data/config.js';
 const { profile, social, experience, projects, skills, theme } = config;
 ---
 
-<BaseLayout title={`${profile.name} - ${profile.title}`} description={profile.bio}>
+<BaseLayout 
+  title={`${profile.name} - ${profile.title}`} 
+  description={profile.bio}
+  theme={theme.style}
+>
   <main class="container-page">
     <Hero profile={profile} social={social} />
     <Experience experience={experience} />
