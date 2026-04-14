@@ -2,38 +2,17 @@ export const themes = {
   minimal: {
     name: 'Minimal',
     description: '极简白底，大字体，留白多',
-    colors: {
-      primary: 'indigo',
-      bg: 'white',
-      bgAlt: 'gray-50',
-      text: 'gray-900',
-      textAlt: 'gray-600',
-      border: 'gray-200'
-    }
+    tags: ['设计师', '产品经理', '简约爱好者']
   },
   creative: {
     name: 'Creative',
-    description: '渐变色彩，动效丰富',
-    colors: {
-      primary: 'purple',
-      bg: 'white',
-      bgAlt: 'purple-50',
-      text: 'gray-900',
-      textAlt: 'gray-600',
-      border: 'purple-200'
-    }
+    description: '渐变色彩，动效丰富，视觉冲击力强',
+    tags: ['前端工程师', '创意工作者', '设计师']
   },
   professional: {
     name: 'Professional',
-    description: '深色商务，信息密集',
-    colors: {
-      primary: 'blue',
-      bg: 'gray-900',
-      bgAlt: 'gray-800',
-      text: 'white',
-      textAlt: 'gray-300',
-      border: 'gray-700'
-    }
+    description: '深色商务，信息密集，沉稳专业',
+    tags: ['资深工程师', '管理者', '商务人士']
   }
 };
 
