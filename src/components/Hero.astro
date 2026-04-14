@@ -1,26 +1,4 @@
 ---
-interface Profile {
-  name: string;
-  title: string;
-  avatar: string;
-  bio: string;
-  email: string;
-  location: string;
-  website: string;
-}
-
-interface Social {
-  github: string;
-  linkedin: string;
-  twitter: string;
-  juejin: string;
-}
-
-interface Props {
-  profile: Profile;
-  social: Social;
-}
-
 const { profile, social } = Astro.props;
 ---
 

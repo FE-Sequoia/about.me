@@ -1,23 +1,4 @@
 ---
-interface Profile {
-  name: string;
-  title: string;
-  email: string;
-  website: string;
-}
-
-interface Social {
-  github: string;
-  linkedin: string;
-  twitter: string;
-  juejin: string;
-}
-
-interface Props {
-  profile: Profile;
-  social: Social;
-}
-
 const { profile, social } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
