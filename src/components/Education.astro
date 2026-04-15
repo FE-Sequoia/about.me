@@ -1,0 +1,29 @@
+---
+const { education } = Astro.props;
+---
+
+<section class="py-16 section-divider">
+  <h2 class="section-title">教育背景</h2>
+  
+  <div class="space-y-6">
+    {education.map((item) => (
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center">
+          <svg class="w-6 h-6 accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          </svg>
+        </div>
+        
+        <div class="flex-1">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+            <h3 class="text-lg font-semibold text-primary">{item.degree}</h3>
+            <span class="text-sm text-secondary font-mono">{item.period}</span>
+          </div>
+          <p class="accent-primary font-medium mb-1">{item.school}</p>
+          <p class="text-sm text-secondary">{item.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
