@@ -1,0 +1,9 @@
+---
+const { profile } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="container-page footer">
+  <p>&copy; {year} {profile.name}. All rights reserved.</p>
+  <p>Built with <a href="https://astro.build" target="_blank">Astro</a></p>
+</footer>

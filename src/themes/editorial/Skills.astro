@@ -1,0 +1,23 @@
+---
+const { skills } = Astro.props;
+---
+
+<section class="container-page">
+  <div class="section-header">
+    <h2 class="section-title">Skills</h2>
+    <span class="section-number">04</span>
+  </div>
+  
+  <div class="skills-container">
+    {skills.map((skill) => (
+      <div class="skill-group">
+        <span class="skill-label">{skill.category}</span>
+        <div class="skill-tags">
+          {skill.items.map((item) => (
+            <span class="skill-tag">{item}</span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

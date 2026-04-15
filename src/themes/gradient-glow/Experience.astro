@@ -1,0 +1,22 @@
+---
+const { experience } = Astro.props;
+---
+
+<section class="container-page">
+  <h2 class="section-title">Experience</h2>
+  
+  <div class="neon-card">
+    <div class="timeline">
+      {experience.map((item) => (
+        <div class="timeline-item">
+          <span class="timeline-period">{item.period}</span>
+          <div class="timeline-content">
+            <h3>{item.position}</h3>
+            <p class="timeline-company">{item.company}</p>
+            <p class="timeline-description">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

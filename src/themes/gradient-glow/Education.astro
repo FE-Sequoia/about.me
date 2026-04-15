@@ -1,0 +1,25 @@
+---
+const { education } = Astro.props;
+---
+
+<section class="container-page">
+  <h2 class="section-title">Education</h2>
+  
+  <div class="neon-card">
+    {education.map((item) => (
+      <div class="education-item">
+        <div class="education-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="education-degree">{item.degree}</h3>
+          <p class="education-school">{item.school}</p>
+          <p class="education-description">{item.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+const { profile, social } = Astro.props;
+---
+
+<section class="container-page">
+  <div class="hero-section">
+    <div class="hero-content">
+      <p class="hero-label">Portfolio</p>
+      <h1 class="hero-name">
+        <span>{profile.name}</span>
+      </h1>
+      <p class="hero-title">{profile.title}</p>
+      <p class="hero-bio">{profile.bio}</p>
+      
+      <div class="hero-location">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>{profile.location}</span>
+      </div>
+      
+      <div class="social-links">
+        {social.github && (
+          <a href={`https://github.com/${social.github}`} class="social-link" target="_blank" rel="noopener">
+            GitHub
+          </a>
+        )}
+        {social.linkedin && (
+          <a href={`https://linkedin.com/in/${social.linkedin}`} class="social-link" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        )}
+        {social.twitter && (
+          <a href={`https://twitter.com/${social.twitter}`} class="social-link" target="_blank" rel="noopener">
+            Twitter
+          </a>
+        )}
+        {profile.email && (
+          <a href={`mailto:${profile.email}`} class="social-link">
+            Email
+          </a>
+        )}
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="hero-avatar">
+        <span class="hero-avatar-inner">{profile.name.charAt(0)}</span>
+      </div>
+      <div class="hero-decoration"></div>
+    </div>
+  </div>
+</section>
